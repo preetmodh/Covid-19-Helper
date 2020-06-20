@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Specific country</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>{{country}}'s COVID-19 STATISTICS</h1>
+    <hr> 
+    <p id="p">*All information is updated every 10 minutes*</p>
+    <div id=Tinfo>
+      <h2>Coronavirus Cases:</h2>
+      <h2 id=Tcases>{{cases}}</h2>
+    </br>
+      <h2>Deaths:</h2>
+      <h2 id=Tdeaths>{{deaths}}</h2>
+    </br>
+      <h2>Recovered:</h2>
+      <h2 id=Trecovered>{{recovered}}</h2>
+    </div>
+  </br>
+  <div class="container">
+  <div class=row>
+    <!-- First Card -->
+    <div class="col-sm col-xs-12">
+      <div class="card" >
+    <div class="card-title">ACTIVE CASES</div>
+
+    <div class="card-body">
+      <h3 style="text-align: center;">{{activecases}}</h3>
+      <p style="text-align: center;">Currently Infected Patients</p>
+      <div style="text-align: center; font-size: 24px; color: rgb(80, 52, 250 );"><b>{{mild}}</b></div>
+      <p style="text-align: center;">in Mild Condition</p>
+      <div style="text-align: center; font-size: 24px; color:rgb(245, 11, 11 );"><b>{{critical}}</b></div>
+      <p style="text-align: center;">Serious or Critical</p>
+    </div>
+    </div>
+  </div>
+    <!-- Second Card -->
+    <div class="col-sm col-xs-12">
+    <div class="card" >
+      <div class="card-title">CLOSED CASES</div>
+    <div class="card-body">
+      <h3 style="text-align: center;">{{outcome}}</h3>
+      <p style="text-align: center;">Cases which had an outcome:</p>
+      <div style="text-align: center; font-size: 24px; color: rgb(126, 207, 48);"><b>{{recovered}}</b></div>
+      <p style="text-align: center;">Recovered / Discharged</p>
+      <div style="text-align: center; font-size: 24px; color:crimson"><b>{{deaths}}</b></div>
+      <p style="text-align: center;">Deaths</p>
+    </div>
+    </div>
+  </div>
+    <!-- third Card -->
+    <div class="col-sm col-xs-12">
+      <div class="card" >
+      <div class="card-title">TODAY STATS</div>
+    <div class="card-body">
+      <h3 style="text-align: center;">{{todaycases}}</h3>
+      <p style="text-align: center;">Today cases</p>
+      <div style="text-align: center; font-size: 24px; color: rgb(126, 207, 48);"><b>{{todayrecovered}}</b></div>
+      <p style="text-align: center;">Today recovered</p>
+      <div style="text-align: center; font-size: 24px; color:crimson"><b>{{todaydeaths}}</b></div>
+      <p style="text-align: center;">Today Deaths</p>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+</body>
+</html>

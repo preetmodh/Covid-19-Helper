@@ -1,0 +1,42 @@
+        #p
+        {
+            text-align: center;
+            color: crimson;
+            
+        }
+        h1
+        {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            text-shadow:2px 2px darkgrey;
+
+        }
+        #Tinfo{
+          font-family: Arial, Helvetica, sans-serif; 
+        }
+        h2{
+          text-align: center;
+          color: darkslategray;
+        }
+        #Tcases{
+          text-align: center;
+          font-size: 45px;
+          color:rgb(171, 178, 185 );
+        }
+        #Tdeaths{
+          text-align: center;
+          font-size: 45px;
+          color: rgb(81, 90, 90)
+        }
+        #Trecovered{
+          text-align: center;
+          font-size: 45px;
+          color: rgb(126, 207, 48)
+        }
+
+      .card-title{
+        text-align: center;
+        font-size: 28px;
+        background:rgb(234, 236, 238);
+      }
+      
