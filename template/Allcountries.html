@@ -48,7 +48,7 @@ th {
   </tr>
   {%for data in datas%}
   <tr>
-    <td>{{data['country']}}</td>
+    <td>{{data['country']}} ({{data['countryInfo']['iso2']}})</td>
     <td>{{data['cases']}}</td>
     <td>{{data['deaths']}}</td>
     <td>{{data['recovered']}}</td>
