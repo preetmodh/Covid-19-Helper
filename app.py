@@ -45,3 +45,6 @@ def scountries():
         mild="{:,}".format(data['active']-data['critical'])
         outcome="{:,}".format(data['recovered']+data['deaths'])
         return render_template("country.html",country=country,todayrecovered=todayrecovered,outcome=outcome,mild=mild,critical=critical,data=data,cases=cases,deaths=deaths,todaycases=todaycases,todaydeaths=todaydeaths,activecases=activecases,recovered=recovered)
+@app.errorhandler(500)
+def page_not_found(e):
+    return render_template("error.html")
