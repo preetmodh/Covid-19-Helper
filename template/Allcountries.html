@@ -29,13 +29,14 @@ th {
 </head>
 <body>
   <p id="p">*All information is updated every 10 minutes*</p>
-  <p style=" font-size: 28px; margin-left:20px;">
-    View data of specific country:
-    <div>
-      <form action="{{url_for('scountries')}}" method="post">
-        <input type="text" name="name" style=" margin-left:20px; border-color: blue;">
-        <button  style=" margin-left:2px; border-color: blue; background:rgb(138, 181, 255);">GO!</button>
-          </div>
+   
+          <form class="form-inline" action="{{url_for('scountries')}}" method="post">
+            <div class="form-group">
+              <label for="country" style=" font-size: 30px; margin-left:20px;">View data of specific country:</label>
+              <input type="text" class="form-control"name="name" style=" margin-left:10px; font-size: 20px; font-weight: 400;">
+              <button type="submit" class="btn btn-primary" style=" margin-left:6px; font-size: 20px;">GO!</button>
+            </div>
+          </form>
   </p>
 <table style="width:100%">
   <tr>
@@ -58,6 +59,6 @@ th {
   </tr>
  
 </table>
-
+</br></br></br>
 </body>
 </html>
