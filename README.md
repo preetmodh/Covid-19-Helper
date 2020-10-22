@@ -1,5 +1,5 @@
 # Covid-19-Helper
-A Flask application that gives statistics of all countries that are affected by covid-19 using a covid-19 api.\
+A Flask application that gives statistics of all countries that are affected by covid-19 using a covid-19 API.\
 To visist the website [Click Here](https://covid-19helper.herokuapp.com/).
 ### Requirements:
 * python3 installed
@@ -11,3 +11,12 @@ To visist the website [Click Here](https://covid-19helper.herokuapp.com/).
 
 
 Then the flask development server will start and copy the server link in chrome and it's done.
+
+### Technologies Used:
+* Python3
+* html
+* css
+* bootstrap
+* Flask
+* jinja
+* Covid-19 API
