@@ -7,5 +7,7 @@ To visist the website [Click Here](https://covid-19helper.herokuapp.com/).
 ### Process:
 1. Open terminal
 2. Go to home directory
-3. type flask run there\
+3. type flask run there
+
+
 Then the flask development server will start and copy the server link in chrome and it's done.
