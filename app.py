@@ -3,7 +3,7 @@ import requests
 app = Flask(__name__, template_folder='template')
 @app.route("/",methods=["GET"])
 def index():
-    res=requests.get('https://corona.lmao.ninja/v2/all?yesterday')
+    res=requests.get('https://corona.lmao.ninja/v2/all?yesterday=true')
     data=res.json()
     cases="{:,}".format(data['cases'])
     deaths="{:,}".format(data['deaths'])
@@ -19,7 +19,7 @@ def index():
 
 @app.route("/Allcountries",methods=["GET","POST"])
 def Allcountries():
-    res=requests.get('https://corona.lmao.ninja/v2/countries?yesterday&sort')
+    res=requests.get('https://corona.lmao.ninja/v2/countries?yesterday=true&sort')
     datas=res.json()
     return render_template("Allcountries.html",datas=datas)
 
@@ -27,7 +27,7 @@ def Allcountries():
 def scountries():
     country=''
     country=request.form.get("name")
-    res=requests.get('https://corona.lmao.ninja/v2/countries/'+country+'?yesterday')
+    res=requests.get('https://corona.lmao.ninja/v2/countries/'+country+'?yesterday=true')
     data=res.json()
     country=data['country']
     country=country.upper()
