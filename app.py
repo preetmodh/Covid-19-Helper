@@ -3,7 +3,9 @@ import requests
 app = Flask(__name__, template_folder='template')
 @app.route("/",methods=["GET"])
 def index():
-    res=requests.get('https://corona.lmao.ninja/v2/all?yesterday=true')
+    print("asddddddddd")
+    res=requests.get('https://disease.sh/v3/covid-19/all?yesterday=true')
+    print(res,"asddddddddd")
     data=res.json()
     cases="{:,}".format(data['cases'])
     deaths="{:,}".format(data['deaths'])
@@ -17,9 +19,10 @@ def index():
     outcome="{:,}".format(data['recovered']+data['deaths'])
     return render_template("index.html",todayrecovered=todayrecovered,outcome=outcome,mild=mild,critical=critical,data=data,cases=cases,deaths=deaths,todaycases=todaycases,todaydeaths=todaydeaths,activecases=activecases,recovered=recovered)
 
+
 @app.route("/Allcountries",methods=["GET","POST"])
 def Allcountries():
-    res=requests.get('https://corona.lmao.ninja/v2/countries?yesterday=true&sort')
+    res=requests.get('https://disease.sh/v3/covid-19/countries?yesterday=true&sort')
     datas=res.json()
     return render_template("Allcountries.html",datas=datas)
 
@@ -27,13 +30,13 @@ def Allcountries():
 def scountries():
     country=''
     country=request.form.get("name")
-    res=requests.get('https://corona.lmao.ninja/v2/countries/'+country+'?yesterday=true')
+    res=requests.get('https://disease.sh/v3/covid-19/countries/'+country+'?yesterday=true')
     data=res.json()
     country=data['country']
-    country=country.upper()
     if res.status_code!=200:
         return render_template("error.html")
     else:
+        country=country.upper()
         cases="{:,}".format(data['cases'])
         deaths="{:,}".format(data['deaths'])
         todaycases="{:,}".format(data['todayCases'])
@@ -45,6 +48,8 @@ def scountries():
         mild="{:,}".format(data['active']-data['critical'])
         outcome="{:,}".format(data['recovered']+data['deaths'])
         return render_template("country.html",country=country,todayrecovered=todayrecovered,outcome=outcome,mild=mild,critical=critical,data=data,cases=cases,deaths=deaths,todaycases=todaycases,todaydeaths=todaydeaths,activecases=activecases,recovered=recovered)
+
+
 @app.errorhandler(500)
-def page_not_found(e):
+def page_not_found():
     return render_template("error.html")
