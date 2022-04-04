@@ -3,9 +3,7 @@ import requests
 app = Flask(__name__, template_folder='template')
 @app.route("/",methods=["GET"])
 def index():
-    print("asddddddddd")
     res=requests.get('https://disease.sh/v3/covid-19/all?yesterday=true')
-    print(res,"asddddddddd")
     data=res.json()
     cases="{:,}".format(data['cases'])
     deaths="{:,}".format(data['deaths'])
