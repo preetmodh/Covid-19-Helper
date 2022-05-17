@@ -47,6 +47,18 @@ def scountries():
         outcome="{:,}".format(data['recovered']+data['deaths'])
         return render_template("country.html",country=country,todayrecovered=todayrecovered,outcome=outcome,mild=mild,critical=critical,data=data,cases=cases,deaths=deaths,todaycases=todaycases,todaydeaths=todaydeaths,activecases=activecases,recovered=recovered)
 
+@app.route("/vacinations",methods=["GET","POST"])
+def vacination():
+    res=requests.get('https://disease.sh/v3/covid-19/vaccine/coverage/countries?lastdays=30&fullData=false')
+    data=res.json()
+    return jsonify(data)
+
+@app.route('/vacinations/<country>',methods=["GET","POST"])
+def single_vacination(country):
+    res=requests.get('https://disease.sh/v3/covid-19/vaccine/coverage/countries/'+country+'?lastdays=30&fullData=false')
+    data=res.json()
+    return jsonify(data)
+
 
 @app.errorhandler(500)
 def page_not_found():
