@@ -28,7 +28,7 @@ th {
 </style>
 </head>
 <body>
-  <p id="p">*All information is updated every day*</p>
+  <p id="p">*All information is updated every 10 minutes*</p>
    
           <form class="form-inline" action="{{url_for('scountries')}}" method="post">
             <div class="form-group">
@@ -44,8 +44,8 @@ th {
     <th>Total cases</th> 
     <th>Total Deaths</th>
     <th>Total recovered</th>
-    <th>Yesterday cases</th>
-    <th>Yesterday Deaths</th>
+    <th>Today cases</th>
+    <th>Today Deaths</th>
   </tr>
   {%for data in datas%}
   <tr>

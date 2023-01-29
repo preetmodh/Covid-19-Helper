@@ -13,7 +13,7 @@
 <body>
     <h1>WORLDWIDE COVID-19 STATISTICS</h1>
     <hr> 
-    <p id="p">*All information is updated every day*</p>
+    <p id="p">*All information is updated every 10 minutes*</p>
     <div id=Tinfo>
       <h2>Coronavirus Cases:</h2>
       <h2 id=Tcases>{{cases}}</h2>
@@ -29,7 +29,7 @@
   <div class=row>
     <!-- First Card -->
     <div class="col-sm col-xs-12">
-      <div class="card" style="height: 22rem; width:auto;">
+      <div class="card" style="height: 22rem;">
     <div class="card-title">ACTIVE CASES</div>
 
     <div class="card-body">
@@ -44,7 +44,7 @@
   </div>
     <!-- Second Card -->
     <div class="col-sm col-xs-12">
-    <div class="card"style="height: 22rem; width:auto;" >
+    <div class="card"style="height: 22rem; " >
       <div class="card-title">CLOSED CASES</div>
     <div class="card-body">
       <h3 style="text-align: center;">{{outcome}}</h3>
@@ -58,15 +58,15 @@
   </div>
     <!-- third Card -->
     <div class="col-sm col-xs-12">
-      <div class="card"style="height: 22rem; width:auto;" >
-      <div class="card-title">YESTERDAY STATS</div>
+      <div class="card"style="height: 22rem;" >
+      <div class="card-title">TODAY STATS</div>
     <div class="card-body">
       <h3 style="text-align: center;">{{todaycases}}</h3>
-      <p style="text-align: center;">Yesterday cases</p>
+      <p style="text-align: center;">Today cases</p>
       <div style="text-align: center; font-size: 24px; color: rgb(126, 207, 48);"><b>{{todayrecovered}}</b></div>
-      <p style="text-align: center;">Yesterday recovered</p>
+      <p style="text-align: center;">Today recovered</p>
       <div style="text-align: center; font-size: 24px; color:crimson"><b>{{todaydeaths}}</b></div>
-      <p style="text-align: center;">Yesterday Deaths</p>
+      <p style="text-align: center;">Today Deaths</p>
     </div>
     </div>
   </div>
